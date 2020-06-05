@@ -1,0 +1,19 @@
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Linear-1                   [-1, 56]           3,192
+       BatchNorm1d-2                   [-1, 56]             112
+         LeakyReLU-3                   [-1, 56]               0
+            Linear-4                   [-1, 56]           3,192
+       BatchNorm1d-5                   [-1, 56]             112
+         LeakyReLU-6                   [-1, 56]               0
+            Linear-7                   [-1, 56]           3,192
+================================================================
+Total params: 9,800
+Trainable params: 9,800
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.00
+Forward/backward pass size (MB): 0.00
+Params size (MB): 0.04
+Estimated Total Size (MB): 0.04
