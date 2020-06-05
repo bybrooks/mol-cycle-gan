@@ -96,6 +96,9 @@ def create_batch_generators(data_path, train_file, test_file, input_shape, batch
     # and convert from Dataframe to ndarray, then reshape (80000, 56) 
     train_A = load_data(os.path.join(data_path, train_file + 'A.csv'), input_shape)   
     train_B = load_data(os.path.join(data_path, train_file + 'B.csv'), input_shape)
+    
+    # return generator object 
+    # each content is [eps, ndarray[64, 56](A), ndarray[64, 56](B)]
     train_batch = minibatchAB(train_A, train_B, batch_size=batch_size)
 
     test_A = load_data(os.path.join(data_path, test_file + 'A.csv'), input_shape)
