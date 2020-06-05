@@ -22,10 +22,13 @@ def minibatch(data, batch_size):
             epoch += 1
         images_batch = data[i:(i + batch_size), :]
         i += batch_size
-        yield epoch, images_batch
+        yield epoch, images_batch   
 
 
 def minibatchAB(dataA, dataB, batch_size):
+    # batchA is generator object.
+    # using for-loop to print content of batchA, you can see it.
+    # [epoch, ndarray] <- content example
     batchA = minibatch(dataA, batch_size)
     batchB = minibatch(dataB, batch_size)
 
