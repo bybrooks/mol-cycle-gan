@@ -90,7 +90,11 @@ def create_image_pools(data_pool_size):
 
 
 def create_batch_generators(data_path, train_file, test_file, input_shape, batch_size):
-    train_A = load_data(os.path.join(data_path, train_file + 'A.csv'), input_shape)
+    # load data from data/input_data/aromatic_rings/X_JTVAE_zinc_train_A.csv
+    #                data/input_data/aromatic_rings/X_JTVAE_zinc_train_B.csv
+    #                as Dataframe
+    # and convert from Dataframe to ndarray, then reshape (80000, 56) 
+    train_A = load_data(os.path.join(data_path, train_file + 'A.csv'), input_shape)   
     train_B = load_data(os.path.join(data_path, train_file + 'B.csv'), input_shape)
     train_batch = minibatchAB(train_A, train_B, batch_size=batch_size)
 
