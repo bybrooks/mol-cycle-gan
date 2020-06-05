@@ -105,8 +105,8 @@ def create_batch_generators(data_path, train_file, test_file, input_shape, batch
     test_B = load_data(os.path.join(data_path, test_file + 'B.csv'), input_shape)
     test_batch = minibatchAB(test_A, test_B, batch_size=batch_size)
 
-    batches_tuple = train_batch, test_batch
-    test_data_tuple = test_A, test_B
+    batches_tuple = (train_batch, test_batch)     # add ()
+    test_data_tuple = (test_A, test_B)            # add ()
 
     return batches_tuple, test_data_tuple
 
