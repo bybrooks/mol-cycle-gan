@@ -60,7 +60,7 @@ def resnet_generator_FC_smallest(input_shape=(56,), use_dropout=False, use_batch
 
     return Model(inputs=inputs, outputs=outputs), inputs, outputs
 
-
+# call resnet_generator_FC_smallest(when arg.network_type = "FC_smallest")
 def resnet_generator(network_type='FC_smaller', **args):
     assert network_type in {'FC_smaller', 'FC_smallest', 'FC_bigger'}, "NOT IMPLEMENTED FOR THIS 'network_type'!!!"
 
@@ -70,4 +70,4 @@ def resnet_generator(network_type='FC_smaller', **args):
         "FC_bigger": resnet_generator_FC_bigger,
     }
 
-    return generators[network_type](**args)
+    return generators[network_type](**args)     # resnet_generator_FC_smallest(generator_params)
